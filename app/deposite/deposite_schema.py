@@ -1,7 +1,6 @@
 from pydantic import BaseModel, Field, field_validator
 from datetime import datetime
-
-from app.main import DATE_FORMAT
+from app.config import settings
 
 
 
@@ -16,7 +15,7 @@ class DepositCreationSchema(BaseModel):
     @field_validator('date')
     def is_data(cls, value) -> str:
         try:
-            datetime.strptime(value, DATE_FORMAT).date()
+            datetime.strptime(value, settings.DATE_FOMAT).date()
         except ValueError:
             raise ValueError(f"error: Incorrect data format, should be {DATE_FORMAT}")
         else:

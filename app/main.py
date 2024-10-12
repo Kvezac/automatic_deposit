@@ -3,8 +3,6 @@ import uvicorn
 
 from app.deposite.deposite_hendlers import router as deposit_router
 
-DATE_FORMAT = '%d.%m.%Y'
-
 def create_app():
     app = FastAPI(
         debug=True,

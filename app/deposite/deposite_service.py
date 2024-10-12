@@ -5,11 +5,11 @@ from datetime import datetime, timedelta
 
 from app.deposite.deposite_schema import DepositSchema
 
-from ..main import DATE_FORMAT
+from app.config import settings
 
 
 def calculate_deposit(schema: DepositSchema) -> dict[str, float]:
-    start_date: datetime = datetime.strptime(schema.date, DATE_FORMAT)
+    start_date: datetime = datetime.strptime(schema.date, settings.DATE_FORMAT)
 
     monthly_rate: float = schema.rate / 100 / 12
 
@@ -24,7 +24,7 @@ def calculate_deposit(schema: DepositSchema) -> dict[str, float]:
 
         next_date = start_date + timedelta(days=30 * (period + 1))
 
-        formatted_date = next_date.strftime(DATE_FORMAT)
+        formatted_date = next_date.strftime(settings.DATE_FORMAT)
 
         results[formatted_date] = round(current_amount, 2)
         # results[f'{next_date:%d.%m.%Y}'] = round(current_amount, 2)
