@@ -18,8 +18,6 @@ class DepositCreationSchema(BaseModel):
             datetime.strptime(value, settings.DATE_FOMAT).date()
         except ValueError:
             raise ValueError(f"error: Incorrect data format, should be {settings.DATE_FORMAT}")
-        else:
-            print(f'[INFO DATE]: {value}')
         return value
 
 

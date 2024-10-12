@@ -1,6 +1,3 @@
-
-
-
 from datetime import datetime, timedelta
 
 from app.deposite.deposite_schema import DepositSchema
