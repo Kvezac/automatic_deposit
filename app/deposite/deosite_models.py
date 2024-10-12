@@ -3,6 +3,8 @@ from sqlalchemy.orm import Mapped, mapped_column
 
 from app.database.database import Base
 
+
+
 class Deposit(Base):
     __tablename__ :str = "deposits"
 
