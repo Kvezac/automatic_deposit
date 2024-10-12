@@ -1,7 +1,11 @@
 from fastapi import FastAPI
 import uvicorn
 
+<<<<<<< HEAD
 from deposite.deposite_hendlers import router as deposit_router
+=======
+from app.deposite.deposite_hendlers import router as deposit_router
+>>>>>>> 25c9873 ( On branch developer)
 
 DATE_FORMAT = '%d.%m.%Y'
 

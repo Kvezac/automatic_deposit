@@ -2,7 +2,13 @@
 
 
 from datetime import datetime, timedelta
+<<<<<<< HEAD
 from .deposite_schema import DepositSchema
+=======
+
+from app.deposite.deposite_schema import DepositSchema
+
+>>>>>>> 25c9873 ( On branch developer)
 from ..main import DATE_FORMAT
 
 

@@ -6,6 +6,10 @@ from app.main import DATE_FORMAT
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 25c9873 ( On branch developer)
 class DepositCreationSchema(BaseModel):
     date: str = Field(..., description="Date in format 'dd.mm.YYYY'", examples=['24.08.2024'])
     periods: int = Field(ge=1, le=60, description="Periods deposit", examples=['10'])
