@@ -1,6 +1,3 @@
-# from .deposite_schema import DepositeSchema
-
-
 from fastapi import APIRouter
 
 
@@ -14,12 +11,11 @@ router = APIRouter(prefix='/deposit', tags=['Deposit Get Info'])
 
 
 
-router = APIRouter(prefix='/crud', tags=['CRUD'])
+router = APIRouter(prefix='/deposit', tags=['DEPOSIT Get Info'])
 
 
 @router.get('/all', response_model=list[DepositSchema])
 async def get_all_items():
-    [print(f'[INFO GET ALL]:  {value}') for value in DATA]
     return DATA
 
 
@@ -34,7 +30,5 @@ async def create_item(body: DepositCreationSchema):
     new_id = len(DATA) + 1
     new_deposit = DepositSchema(id=new_id, **body.dict())
     DATA.append(new_deposit) # type: ignore
-
-    print(f'[INFO POST]: {new_id} {new_deposit} ')
     results: dict[str, float] = calculate_deposit(new_deposit)
     return results
