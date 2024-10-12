@@ -3,12 +3,8 @@
 
 from fastapi import APIRouter
 
-<<<<<<< HEAD
-from deposite.deposite_service import calculate_deposit
-=======
 
 from app.deposite.deposite_service import calculate_deposit
->>>>>>> 25c9873 ( On branch developer)
 from tests.fixture import DATA
 
 from .deposite_schema import DepositCreationSchema, DepositSchema
