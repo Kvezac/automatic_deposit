@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 import uvicorn
 
+from app.database.database import create_database
 from app.deposite.deposite_hendlers import router as deposit_router
 
 def create_app():
+    create_database()
     app = FastAPI(
         debug=True,
         docs_url='/api/docs',
@@ -16,3 +18,4 @@ def create_app():
 
 if __name__ == "__main__":
     uvicorn.run(app="main:create_app", factory=True, reload=True)
+    # export PYTHONPATH="/home/kvezac/mente/calculate_deposit"

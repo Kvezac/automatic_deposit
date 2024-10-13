@@ -6,7 +6,7 @@ from app.deposite.deosite_models import Deposit
 
 class DepositRepository(ABC):
     @abstractmethod
-    async def get_deposits(self):
+    def get_deposits(self):
         pass
 
     # @abstractmethod
