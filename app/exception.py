@@ -1,3 +1,3 @@
 class InputDateError(Exception):
-    detail = "Task not found"
+    detail = "Format date input is not valid. Expected format: dd.mm.yyyy"
     code = 400
