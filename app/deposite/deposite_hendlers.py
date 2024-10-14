@@ -32,11 +32,10 @@ async def get_item(id: int, db: Session = Depends(get_db)) -> dict[str, float]:
 async def create_item(body: DepositCreationSchema, db: Session = Depends(get_db)):
     new_deposit = Deposit(periods=body.periods, amount=body.amount, rate=body.rate)
 
-    # Insert the new deposit into the database
-    db.add(new_deposit)
-    db.commit()  # Commit the transaction to save changes
-    db.refresh(new_deposit)  # Refresh to get the latest state of the object
 
-    # Now we can calculate based on the newly created deposit
+    db.add(new_deposit)
+    db.commit()
+    db.refresh(new_deposit)
+
     results: dict[str, float] = calculate_deposit(DepositSchema(new_deposit)) # type: ignore
     return results
